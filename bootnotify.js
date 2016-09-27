@@ -30,7 +30,7 @@
  * $().bootnotifyJSON({code: 1, msg: 'message'}, {position: 'top'})
  */
 ;
-(function() {
+(function($) {
   "use strict";
 
   var defaultOptions = {

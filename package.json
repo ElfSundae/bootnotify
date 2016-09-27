@@ -1,0 +1,20 @@
+{
+  "name": "bootnotify",
+  "version": "1.0.0",
+  "description": "An easy way to show Bootstrap's notifications.",
+  "main": "bootnotify.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ElfSundae/bootnotify.git"
+  },
+  "keywords": [
+    "Bootstrap",
+    "notification"
+  ],
+  "author": "Elf Sundae",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ElfSundae/bootnotify/issues"
+  },
+  "homepage": "https://github.com/ElfSundae/bootnotify"
+}

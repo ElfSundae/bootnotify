@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Bootnotify Demo</title>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+        .menu {
+            margin: 20px 0;
+        }
+        .box {
+            margin: 20px 0;
+            background-color: #eee;
+        }
+        .box p {
+            font-size: 80px;
+            margin: 20px;
+        }
+        .alert-header {
+            font-size: 20px;
+            margin-bottom: 0;
+            padding-left: 40px;
+        }
+        .alert-custom {
+            background-color: #333;
+            color: #3f3;
+            max-width: 50%;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="menu">
+            <button class="btn btn-default demo-top-box">Top Box</button>
+            <button class="btn btn-default demo-bottom-box">Bottom Box</button>
+            <button class="btn btn-success demo-auto-hide">Auto hide</button>
+            <button class="btn btn-warning demo-with-title">With title</button>
+            <button class="btn btn-danger demo-custom-class">Custom Class</button>
+        </div>
+
+        <div class="box">
+            <p>Box</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="bootnotify.js"></script>
+    <script>
+        $(function () {
+            $('body').bootnotify('<a href="https://github.com/ElfSundae/bootnotify" class="alert-link" target="_blank"><strong>Bootnotify.js</strong></a>', 'info alert-header', 'top');
+        });
+
+        $('.demo-top-box').click(function () {
+            $('.box:first').bootnotify($(this).text(), 'success', 'top');
+        });
+        $('.demo-bottom-box').click(function () {
+            $('.box:first').bootnotify($(this).text());
+        });
+        $('.demo-auto-hide').click(function () {
+            $('.menu:first').bootnotify($(this).text()).delay(2000).slideUp();
+        });
+        $('.demo-with-title').click(function () {
+            $('.menu:first').bootnotify({
+                title: '<span class="glyphicon glyphicon-warning-sign"></span> Warning!',
+                message: $(this).text()
+            }, 'warning');
+        });
+        $('.demo-custom-class').click(function () {
+            $('.menu:first').bootnotify({
+                message: $(this).text(),
+                close: true,
+                position: 'top',
+                animation: 'slide'
+            }, 'custom');
+        });
+    </script>
+</body>
+</html>

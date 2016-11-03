@@ -41,7 +41,7 @@
     animation: 'fade', // null, fade, slide,
   };
 
-  $.fn.bootnotify = function(options, type) {
+  $.fn.bootnotify = function(options, type, position) {
 
     // fast fail if nothing selected (http://dev.jquery.com/ticket/2752)
     if (!this.length) {
@@ -53,10 +53,6 @@
       return this;
     }
 
-    if (type === undefined) {
-      type = 'info';
-    }
-
     if (options === undefined) {
       options = {};
     } else if (typeof(options) == 'string') {
@@ -64,6 +60,15 @@
         message: options
       };
     }
+
+    if (type === undefined) {
+      type = 'info';
+    }
+
+    if (typeof(position) == 'string') {
+      options.position = position;
+    }
+
     options = $.extend({}, defaultOptions, options);
 
     var html = '<div role="alert" class="alert alert-' + type + (options.close ? ' alert-dismissible' : '') + '">';
@@ -79,7 +84,7 @@
     $(this).find('.alert-' + type).remove();
 
     var alert = null;
-    if (options.position == 'top') {
+    if (options.position === 'top') {
       alert = $(html).prependTo($(this));
     } else {
       alert = $(html).appendTo($(this));

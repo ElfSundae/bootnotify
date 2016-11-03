@@ -1,6 +1,6 @@
 {
   "name": "bootnotify",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "An easy way to show Bootstrap's notifications.",
   "main": "bootnotify.js",
   "repository": {

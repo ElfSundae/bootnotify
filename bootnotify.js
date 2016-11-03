@@ -20,7 +20,7 @@
  * // show
  * $(...).bootnotify('message');
  * $(...).bootnotify('message', 'info');
- * $(...).bootnotify('message', 'info', 'top');
+ * $(...).bootnotify('message', 'danger', 'top');
  * $(...).bootnotify({...}, 'my-alert-type');
  *
  * // hide
@@ -38,8 +38,9 @@
     title: null, // title for alert
     close: true, // show close button
     message: '',
-    position: 'bottom', // 'top', 'bottom'
+    position: 'bottom', // 'top', 'bottom', 'after', 'before'
     animation: 'fade', // null, fade, slide,
+    duration: 300
   };
 
   $.fn.bootnotify = function(options, type, position) {
@@ -84,16 +85,22 @@
 
     $(this).find('.alert-' + type).remove();
 
-    var alert = null;
+    var alert = $(html).hide();
     if (options.position === 'top') {
-      alert = $(html).prependTo($(this));
+      alert.prependTo($(this));
+    } else if (options.position === 'after') {
+      alert.insertAfter($(this));
+    } else if (options.position === 'before') {
+      alert.insertBefore($(this));
     } else {
-      alert = $(html).appendTo($(this));
+      alert.appendTo($(this));
     }
     if (options.animation == 'fade') {
-      alert.hide().fadeIn(250);
+      alert.fadeIn(options.duration);
     } else if (options.animation == 'slide') {
-      alert.hide().slideDown(250);
+      alert.slideDown(options.duration);
+    } else {
+      alert.show();
     }
 
     return alert;

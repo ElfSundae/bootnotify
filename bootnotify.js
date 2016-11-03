@@ -18,16 +18,17 @@
  * options:
  *
  * // show
- * $().bootnotify('message');
- * $().bootnotify('message', 'info');
- * $().bootnotify({...}, 'my-alert-type');
+ * $(...).bootnotify('message');
+ * $(...).bootnotify('message', 'info');
+ * $(...).bootnotify('message', 'info', 'top');
+ * $(...).bootnotify({...}, 'my-alert-type');
  *
  * // hide
- * $().bootnotify(false);
- * $().bootnotify(false, 'info');
+ * $(...).bootnotify(false);
+ * $(...).bootnotify(false, 'info');
  *
  * // show message from JSON (i.e. API result)
- * $().bootnotifyJSON({code: 1, msg: 'message'}, {position: 'top'})
+ * $(...).bootnotifyJSON({code: 1, msg: 'message'}, {position: 'top'})
  */
 ;
 (function($) {

@@ -10,7 +10,7 @@ npm install bootnotify
 
 ## Usage
 
-:tada: ** See [LIVE DEMO][] for more info.**
+:tada: **See [LIVE DEMO][] for more info.**
 
 ```js
 $('body').bootnotify('Hello!');

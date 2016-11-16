@@ -27,8 +27,6 @@
  * $(...).bootnotify(false);
  * $(...).bootnotify(false, 'info');
  *
- * // show message from JSON (i.e. API result)
- * $(...).bootnotifyJSON({code: 1, msg: 'message'}, {position: 'top'})
  */
 ;
 (function($) {
@@ -44,7 +42,6 @@
   };
 
   $.fn.bootnotify = function(options, type, position) {
-
     // fast fail if nothing selected (http://dev.jquery.com/ticket/2752)
     if (!this.length) {
       return this;
@@ -104,29 +101,5 @@
     }
 
     return alert;
-  };
-
-  $.fn.bootnotifyJSON = function(json, options) {
-    $(this).bootnotify(false);
-
-    if (typeof(options) != 'object') {
-      options = {};
-    }
-
-    var type = 'success';
-    if (json === undefined || json.code === undefined) {
-      type = 'danger';
-      options.message = 'BootnotifyJSON exception: invalid JSON.';
-    } else if (1 == json.code) {
-      options.message = (json.msg !== undefined ? json.msg : 'Succeed!');
-    } else {
-      type = 'danger';
-      var msg = (json.msg !== undefined ? json.msg : 'Failed!');
-      if (msg.indexOf('\n') > -1) {
-        msg = msg.replace(new RegExp('\n', 'g'), '<br>');
-      }
-      options.message = msg;
-    }
-    return $(this).bootnotify(options, type);
   };
 })(jQuery);

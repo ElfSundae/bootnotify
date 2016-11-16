@@ -33,4 +33,4 @@ $('#notify').bootnotify('Auto hide').delay(2000).slideUp();
 MIT
 
 [bootstrap alerts]: http://getbootstrap.com/components/#alerts
-[live demo]: https://elfsundae.github.io/bootnotify/demo.html
+[live demo]: https://elfsundae.github.io/bootnotify/

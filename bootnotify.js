@@ -42,7 +42,6 @@
   };
 
   $.fn.bootnotify = function(options, type, position) {
-    // fast fail if nothing selected (http://dev.jquery.com/ticket/2752)
     if (!this.length) {
       return this;
     }

@@ -49,7 +49,12 @@
     <script src="bootnotify.js"></script>
     <script>
         $(function () {
-            $('body').bootnotify('<a href="https://github.com/ElfSundae/bootnotify" class="alert-link" target="_blank"><strong>Bootnotify.js</strong></a>', 'info alert-header', 'top');
+            $('body').bootnotify({
+                message: '<a href="https://github.com/ElfSundae/bootnotify" class="alert-link"><strong>Bootnotify.js</strong></a>',
+                position: 'top',
+                animation: null,
+                close: false
+            }, 'info alert-header');
         });
 
         $('.demo-top-box').click(function () {
@@ -70,7 +75,6 @@
         $('.demo-custom-class').click(function () {
             $('.menu:first').bootnotify({
                 message: $(this).text(),
-                close: true,
                 position: 'top',
                 animation: 'slide'
             }, 'custom');

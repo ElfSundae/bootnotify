@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>Bootnotify Demo</title>
-    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <style type="text/css">
         .menu {
             margin: 20px 0;
@@ -44,15 +44,15 @@
         </div>
     </div>
 
-    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="bootnotify.js"></script>
     <script>
         $(function () {
             $('body').bootnotify({
                 message: '<a href="https://github.com/ElfSundae/bootnotify" class="alert-link"><strong>Bootnotify.js</strong></a>',
                 position: 'top',
-                animation: null,
+                animation: 'slide',
                 close: false
             }, 'info alert-header');
         });
